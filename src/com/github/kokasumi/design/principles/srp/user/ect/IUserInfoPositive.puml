@@ -1,0 +1,21 @@
+@startuml
+package com.github.kokasumi.design.principles.srp.user.positive {
+ interface IUserBO {
+  + void setUserID(String userID);
+  + String getUserID();
+  + void setPassword(String password);
+  + String getPassword();
+  + void setUserName(String userName);
+  + String getUserName();
+ }
+ note bottom of IUserBO: 负责用户的属性
+ interface IUserBiz {
+  + boolean changePassword(IUserBO userBO,String oldPassword, String newPassword);
+  + boolean deleteUser(IUserBO userBO);
+ }
+ note bottom of IUserBiz: 负责用户的行为
+ interface IUserInfo extends IUserBO,IUserBiz{}
+ class UserInfo implements IUserInfo {
+ }
+}
+@enduml
