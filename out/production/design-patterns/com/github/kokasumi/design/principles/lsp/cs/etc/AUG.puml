@@ -1,0 +1,20 @@
+@startuml
+package com.github.kokasumi.design.principles.lsp.cs {
+    abstract class AbstractGun {
+        + {abstract} void shoot();
+    }
+    class Rifle extends AbstractGun {}
+    note left of Rifle: 步枪
+    class AK47 extends Rifle {}
+    class AUG extends Rifle {
+        + void zoomOut();
+    }
+    note bottom of AUG: AUG狙击步枪，可以瞄准
+    class Snipper {
+        - AUG aug;
+        + void setAug(AUG aug);
+        + void killEnemy();
+    }
+    AUG <--up* Snipper: 依赖
+}
+@enduml

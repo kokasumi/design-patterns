@@ -1,0 +1,22 @@
+@startuml
+package com.github.kokasumi.design.principles.lsp.cs {
+    abstract class AbstractGun {
+        + {abstract} void shoot();
+    }
+    class HandGun extends AbstractGun {}
+    note bottom of HandGun: 手枪
+    class MachineGun extends AbstractGun {}
+    note bottom of MachineGun: 机枪
+    class Rifle extends AbstractGun {}
+    note bottom of Rifle: 步枪
+    class Soldier {
+        - AbstractGun gun;
+        + void setGun(AbstractGun gun);
+        + void killEnemy();
+    }
+    AbstractGun <...right Soldier: 依赖
+    class Client {}
+    Soldier <--right Client
+    AbstractGun<--left Client
+}
+@enduml

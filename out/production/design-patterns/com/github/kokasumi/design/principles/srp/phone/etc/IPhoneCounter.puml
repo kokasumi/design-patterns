@@ -1,0 +1,10 @@
+@startuml
+package com.github.kokasumi.design.principles.srp.phone.counter {
+    interface IPhone {
+        + void dial(String phoneNumber);
+        + void chat(Object o);
+        + void hangup();
+    }
+    class Phone implements IPhone {}
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+package com.github.kokasumi.design.principles.srp.user.counter {
+    interface IUserManager {
+        + changeUser(IUserBO userBO, String... changeOptions);
+    }
+    note bottom of IUserManager: 一个方法承担多个职责
+}
+@enduml

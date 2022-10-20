@@ -1,0 +1,10 @@
+@startuml
+package com.github.kokasumi.design.principles.srp.user.positive {
+    interface IUserManager {
+        + void changeUserName(String newUserName);
+        + void changeHomeAddress(String newHomeAddress);
+        + void changeOfficeTel(String telNumber);
+    }
+    note bottom of IUserManager: 一个方法承担一个职责
+}
+@enduml

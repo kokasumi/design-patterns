@@ -1,0 +1,15 @@
+@startuml
+package com.github.kokasumi.design.principles.srp.phone.composition {
+    interface IConnectionManager {
+        + void dial(String phoneNumber);
+        + void hangup();
+    }
+    note top of IConnectionManager: 负责协议管理
+    interface IDataTransfer {
+        + void chat(IConnectionManager cm);
+    }
+    note top of IDataTransfer: 负责数据传送
+    IConnectionManager <...right IDataTransfer: 依赖
+    class Phone implements IConnectionManager,IDataTransfer {}
+}
+@enduml

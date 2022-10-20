@@ -1,0 +1,31 @@
+@startuml
+package com.github.kokasumi.design.principles.lod.counter {
+    class Student {
+        - Long id;
+        - String name;
+        + Long getId();
+        + void setId(Long id);
+        + String getName();
+        + void setName(String name);
+    }
+    class Class {
+        - Long id;
+        - String name;
+        - List<Student> students;
+        + Long getId();
+        + void setId(Long id);
+        + String getName();
+        + void setName(String name);
+        + List<Student> getStudents();
+        + void setStudents(List<Student> students);
+    }
+    Student ---righto Class: 聚合
+    class School {
+        - List<Class> classes;
+        + void printStudents();
+    }
+    Class ---downo School: 聚合
+    Student <...down School: 依赖
+    note left of School: 学校依赖学生，打印学生名字，违反了迪米特原则
+}
+@enduml

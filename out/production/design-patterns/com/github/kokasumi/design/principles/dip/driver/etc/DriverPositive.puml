@@ -1,0 +1,17 @@
+@startuml
+package com.github.kokasumi.design.principles.dip.driver.positive {
+    interface ICar {
+        + void run();
+    }
+    interface IDriver {
+        + void drive(ICar car);
+    }
+    ICar <...left IDriver
+    class Benz implements ICar{}
+    note bottom of Benz: 奔驰
+    class BMW implements ICar{}
+    note bottom of BMW: 宝马
+    class Driver implements IDriver{}
+    note bottom of Driver: 依赖ICar接口，司机可以驾驶任何实现ICar接口的车辆
+}
+@enduml

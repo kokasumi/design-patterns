@@ -1,0 +1,26 @@
+@startuml
+package com.github.kokasumi.design.principles.ocp.book {
+    interface IBook {
+        + String getName();
+        + int getPrice();
+        + String getAuthor();
+    }
+    class NovelBook implements IBook {
+        - String name;
+        - int price;
+        - String author;
+        + NovelBook(String name, int price, String author);
+        + String getName();
+        + int getPrice();
+        + String getAuthor();
+    }
+    class BookStore {
+    }
+    IBook <...left  BookStore: 依赖
+    interface IComputerBook extends IBook{
+        + String getScope();
+    }
+    note top of IComputerBook: 使用新接口扩展计算机书籍特有属性
+    class ComputerBook implements IComputerBook{}
+}
+@enduml

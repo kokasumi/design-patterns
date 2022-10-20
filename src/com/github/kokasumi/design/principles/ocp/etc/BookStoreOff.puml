@@ -1,0 +1,25 @@
+@startuml
+package com.github.kokasumi.design.principles.ocp.book {
+    interface IBook {
+        + String getName();
+        + int getPrice();
+        + String getAuthor();
+    }
+    class NovelBook implements IBook {
+        - String name;
+        - int price;
+        - String author;
+        + NovelBook(String name, int price, String author);
+        + String getName();
+        + int getPrice();
+        + String getAuthor();
+    }
+    class BookStore {
+    }
+    IBook <...left  BookStore: 依赖
+    class OffNovelBook extends NovelBook {
+        + int getPrice();
+    }
+    note left of OffNovelBook: 重写getPrice()方法实现扩展
+}
+@enduml
