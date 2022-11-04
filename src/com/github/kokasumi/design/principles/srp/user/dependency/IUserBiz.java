@@ -1,7 +1,5 @@
 package com.github.kokasumi.design.principles.srp.user.dependency;
 
-import com.github.kokasumi.design.principles.srp.user.positive.IUserBO;
-
 /**
  * @version v1.0
  * @author: lg

@@ -1,4 +1,4 @@
-package com.github.kokasumi.design.principles.srp.user.positive;
+package com.github.kokasumi.design.principles.srp.user.commerce;
 
 /**
  * @version v1.0
@@ -15,7 +15,7 @@ public interface IUserBiz {
      * @param newPassword
      * @return
      */
-    boolean changePassword(UserBO userBO,String oldPassword, String newPassword);
+    boolean changePassword(UserBO userBO, String oldPassword, String newPassword);
 
     /**
      * 删除用户

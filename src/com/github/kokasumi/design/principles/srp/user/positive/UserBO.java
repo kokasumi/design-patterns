@@ -1,13 +1,13 @@
-package com.github.kokasumi.design.principles.srp.user.counter;
+package com.github.kokasumi.design.principles.srp.user.positive;
 
 /**
  * @version v1.0
  * @author: lg
- * @date: 2022/10/16 14:46
- * @description
+ * @date: 2022/11/3 23:05
+ * @description 用户实体
  * @since v1.0
  */
-public class UserInfo {
+public class UserBO {
     /**
      * 用户Id
      */
@@ -116,19 +116,5 @@ public class UserInfo {
 
     public String getDetailAddress() {
         return detailAddress;
-    }
-
-    public boolean changePassword(String oldPassword, String newPassword) {
-        if (!oldPassword.equals(password)) {
-            System.out.println("旧密码不正确");
-            return false;
-        }
-        setPassword(newPassword);
-        return true;
-    }
-
-    public boolean deleteUser() {
-        System.out.println("成功删除用户");
-        return true;
     }
 }

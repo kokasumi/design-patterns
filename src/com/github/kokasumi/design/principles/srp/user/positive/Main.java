@@ -9,12 +9,11 @@ package com.github.kokasumi.design.principles.srp.user.positive;
  */
 public class Main {
     public static void main(String[] args) {
-        IUserInfo userInfo = new UserInfo();
         // 作为用户属性业务对象维护
-        IUserBO userBO = userInfo;
+        UserBO userBO = new UserBO();
         userBO.setPassword("123232");
         // 执行业务逻辑
-        IUserBiz userBiz = userInfo;
+        IUserBiz userBiz = new UserBiz();
         userBiz.deleteUser(userBO);
     }
 }
